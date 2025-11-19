@@ -1,8 +1,32 @@
 # Create Nbstack
 
+A CLI scaffolding tool designed to generate new Node.js projects.
 
+## Codebase Overview
 
-> created by [create-create-x](https://github.com/painfulexistence/create-create-x).
+### Purpose
+Quickly bootstrap a new project with a basic structure by running `npx create-nbstack <name>`.
+
+### Stack
+- **Language**: TypeScript (Node.js)
+- **Build Tool**: `tsup` (compiles the CLI to ESM)
+- **Package Manager**: npm
+
+### Key Components
+1. **CLI Entry Point (`src/cli.ts`)**:
+   - Handles user interaction using `node:readline`.
+   - Prompts for Project Name and Operating System.
+   - Creates the target directory and copies files from `templates/default/`.
+   - Performs string replacement in files.
+
+2. **Templates (`templates/default/`)**:
+   - Contains the blueprint for the generated project.
+   - Includes `package.json`, `index.js`, and `README.md`.
+
+### Flow
+1. **User Input**: Prompts for project details.
+2. **Template Processing**: Reads files from `templates/default`.
+3. **Generation**: Replaces placeholders (e.g., `{{projectName}}`) and writes files.
 
 ## Usage
 
